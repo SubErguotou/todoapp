@@ -1,32 +1,85 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <main>
+    <div class="container">
+      <h1>欢迎使用shun待办事项</h1>
+      <div class="input-add">
+      <input type="text" name="todo" />
+      <button>
+        <i class="plus"></i>
+      </button>
+      </div>
     </div>
-    <router-view/>
-  </div>
+    <div class="filters">
+      <span class="fulter active">全部</span>
+      <span class="fulter">已完成</span>
+      <span class="fulter">未完成</span>
+    </div>
+    <div class="todo-list">
+      <div class="todo-item">
+        <lable>
+          <input type="checkbox" />
+          todo1
+          <span class="check-button"></span>
+        </lable>
+      </div>
+      <div class="todo-item">
+        <lable>
+          <input type="checkbox" />
+          todo2
+          <span class="check-button"></span>
+        </lable>
+      </div>
+      <div class="todo-item">
+        <lable>
+          <input type="checkbox" />
+          todo3
+          <span class="check-button"></span>
+        </lable>
+      </div>
+    </div>
+  </main>
 </template>
 
+<script>
+export default {
+  name: 'App',
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+main {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: rgb(203,210, 240);
 }
+
+.container {
+  width: 60%;
+  max-width: 400px;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 24px;
+  padding: 48px 28px;
+  background-color: rgb(245, 246, 252);
+}
+
+h1 {
+  margin: 24px 0;
+  font-size: 28px;
+  color: #414873;
+}
+
+.input-add{
+  
+}
+
 </style>
