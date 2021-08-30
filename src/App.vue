@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="sass">
 * {
   box-sizing: border-box;
   margin: 0;
