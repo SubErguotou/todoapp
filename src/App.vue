@@ -1,5 +1,5 @@
 <template>
-  <main>
+   <main>
     <div class="container">
       <h1>欢迎使用shun待办事项</h1>
       <div class="input-add">
@@ -41,12 +41,17 @@
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue'
+
 export default {
-  name: "App",
-};
+  name: 'App',
+  components: {
+    // HelloWorld
+  }
+}
 </script>
 
-<style lang="sass">
+<style lang="scss">
 * {
   box-sizing: border-box;
   margin: 0;
