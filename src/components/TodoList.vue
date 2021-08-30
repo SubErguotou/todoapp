@@ -1,6 +1,6 @@
 <template>
   <div class="todo-list">
-      <TodoListitemVue />
+      <TodoListitemVue v-for="i in 3" :key="i"></TodoListitemVue>
   </div>
 </template>
 

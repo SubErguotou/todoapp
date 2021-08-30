@@ -21,6 +21,10 @@ export default {
     TodoAddVue,
     TodoFilterVue,
     TodoListVue
+  },
+  setup() {
+    const todos = ref([]);
+    const addTodo = (todo) => todo.value.push(todo)
   }
 }
 </script>
