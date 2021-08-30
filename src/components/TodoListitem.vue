@@ -1,8 +1,8 @@
 <template>
   <div class="todo-item">
     <label>
-      <input type="checkbox" />
-      todo
+      <input type="checkbox" :checked="todoItem.completed"/>
+      {{todoItem.content}}
       <span class="check-button"></span>
     </label>
   </div>
@@ -11,9 +11,7 @@
 <script>
 export default {
     name: "TodoListItem",
-    components: {
-        
-    }
+    props: ["todoItem"]
 };
 </script>
 

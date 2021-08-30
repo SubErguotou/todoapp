@@ -1,7 +1,7 @@
 <template>
   <div class="input-add">
-    <input type="text" name="todo" />
-    <button>
+    <input type="text" name="todo" v-model="todoContent" @keyup.enter="emitAddTodo"/>
+    <button @click="emitAddTodo">
       <i class="plus"></i>
     </button>
   </div>
@@ -9,13 +9,36 @@
 
 <script>
 
+import { ref } from "vue"
+
 export default {
     name: "TodoApp",
+    // props:保存父组件传递下来的信息
+    // context:保存了vue的上下文信息
+    setup(props, context) {
+        const todoContent = ref("");
+        const emitAddTodo = ()=>{
+            const todo = {
+                id: props.tid,
+                // v-model绑定的值可以使用.value取出
+                content: todoContent.value,
+                completed: false,
+            }
+            // 第一个参数事件名，第二个参数值
+            context.emit("add-todo", todo);
+
+            todoContent.value = "";
+        }
+        return{
+            todoContent,
+            emitAddTodo
+        }
+    }
 };
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
 .input-add {
   position: relative;
   display: flex;
