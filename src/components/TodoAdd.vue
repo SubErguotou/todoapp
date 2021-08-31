@@ -24,7 +24,7 @@ export default {
                 content: todoContent.value,
                 completed: false,
             }
-            // 第一个参数事件名，第二个参数值
+            // 第一个参数事件名，第二个参数值,传递给父组件
             context.emit("add-todo", todo);
 
             todoContent.value = "";
